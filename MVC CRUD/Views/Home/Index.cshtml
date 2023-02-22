@@ -1,0 +1,68 @@
+﻿@model IEnumerable< MVC_CRUD.Models.MVC_Tbl_Emplyee>
+@{
+    //List<MVC_Tbl_Emplyee> Model = ViewData.Model as MVC_CRUD.Models.MVC_Tbl_Emplyee;
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Create","Create")
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.Emp_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.Emp_MobileNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.Emp_Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.Emp_Age)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(M_item => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(M_item => item.Emp_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(M_item => item.Emp_MobileNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(M_item => item.Emp_Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(M_item => item.Emp_Age)
+                    </td>
+                    <td>
+                       @Html.ActionLink("Edit","Edit",new{Id = item.Id})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete","Delete",new{ Id=item.Id})
+                    </td>
+                   
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model MVC_CRUD.Models.MVC_Tbl_Emplyee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => m.Id)
+                        @Html.TextBoxFor(m => m.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(m => m.Emp_Name)
+                        @Html.TextBoxFor(m => m.Emp_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(m => m.Emp_MobileNo)
+                        @Html.TextBoxFor(m => m.Emp_MobileNo)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(m => m.Emp_Gender)
+                        @Html.TextBoxFor(m => m.Emp_Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayNameFor(m => m.Emp_Age)
+                        @Html.TextBoxFor(m => m.Emp_Age)
+                    </td>
+                    <td>
+                        <input type="submit" value="submit" />
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+</body>
+</html>
